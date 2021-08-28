@@ -7,7 +7,7 @@ export default function ItemList({listado}){
         <div className="container">
             <div className="row">
                 {
-                    listado.map(producto => <Item producto={producto}/>)
+                    listado.map(producto => <Item key={producto.id} producto={producto}/>)
                 }
             </div>
         </div>

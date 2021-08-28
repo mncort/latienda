@@ -5,6 +5,6 @@ export const buscarDatos = () => {
     return new Promise((resolve, reject) => {
         setTimeout(()=>{
             resolve(arrayItems)
-        },2000)
+        },1000)
     })
 }

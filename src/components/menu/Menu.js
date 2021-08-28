@@ -1,20 +1,21 @@
 import React from 'react';
 import './Menu.css';
 import Cart from '../cart/cart';
+import { Link } from 'react-router-dom';
 
 export default function Menu(){
     return (
       
     <div className="menu-nav">
         <div className="logo">
-            <img src="logoBENITOS.png"/>
+            <Link to={'/'}><img src="logoBENITOS.png"/></Link>
         </div>
 
         <div className="menu">
-            <a className="menu-item" href="#">Fiambres</a>
-            <a className="menu-item" href="#">Picadas</a>
-            <a className="menu-item" href="#">Comidas</a>
-            <Cart className="menu-item"/>
+            <Link className="menu-item" to={'/categoria/remeras'}>Remeras</Link>
+            <Link className="menu-item" to={'/categoria/pantalones'}>Pantalones</Link>
+            <Link className="menu-item" to={'/categoria/zapatillas'}>Zapatillas</Link>
+            <Link className="menu-item" to={'/carrito'}><Cart/></Link>
         </div>
     </div>
 
