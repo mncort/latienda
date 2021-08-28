@@ -12,7 +12,7 @@ export default function ItemDetail({item}){
                     <img src={item.img} className="card-img-top" alt={item.title}/>
                     <div className="card-body">
                         <h5 className="card-title">{item.title}</h5>
-                        <p className="card-text">$ {item.precio}</p>
+                        <span className="card-text"><p>{item.descripcion}</p><p>$ {item.precio}</p></span>
                         <Link className="btn btn-primary" to={`/carrito`}>Comprar</Link>
                     </div>
                 </div>
