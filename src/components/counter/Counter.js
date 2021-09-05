@@ -19,7 +19,6 @@ export default function Counter({id, stock, cantidad, setCantidad, agregar}){
         <>
             <div className="w-50 m-auto">
                 {isInCarrito(id) ?
-
                     <span>
                         <Link to={'/carrito'} className="btn btn-success">Terminar Compra</Link>
                     </span>
