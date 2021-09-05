@@ -15,7 +15,7 @@ export default function ItemListContainer(){
         setLoading(true)
         buscarDatos()
             .then(res => {
-                cat && (res = res.filter(item => item.category == cat))
+                cat && (res = res.filter(item => item.category === cat))
                 setProductos(res)
             })
             .catch(err => console.log(err))

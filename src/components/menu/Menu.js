@@ -8,7 +8,7 @@ export default function Menu(){
       
     <div className="menu-nav">
         <div className="logo">
-            <Link to={'/'}><img src="logoBENITOS.png"/></Link>
+            <Link to={'/'}><img src="logoBENITOS.png" alt="Benitos"/></Link>
         </div>
 
         <div className="menu">
