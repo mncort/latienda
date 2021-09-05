@@ -14,7 +14,6 @@ export default function ItemDetail({item}){
 
     const agregar = () => {
         addItem({id, img, title, precio}, cantidad)
-        console.log(isInCarrito(item.id))
     }
 
     return(
