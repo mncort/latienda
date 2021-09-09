@@ -19,18 +19,20 @@ export default function Counter({id, stock, cantidad, setCantidad, agregar}){
         <>
             <div className="w-50 m-auto">
                 {isInCarrito(id) ?
-                    <span>
+                    <div>
                         <Link to={'/carrito'} className="btn btn-success">Terminar Compra</Link>
-                    </span>
+                    </div>
                     :
-                    <span>
-                        <button className="btn btn-primary" onClick={restCantidad}>-</button>
-                        <span className="mx-3">{cantidad}</span>
-                        <button className="btn btn-primary" onClick={sumCantidad}>+</button>
-                    </span>
+                    <div>
+                        <div>
+                            <button className="btn btn-primary" onClick={restCantidad}>-</button>
+                            <span className="mx-3">{cantidad}</span>
+                            <button className="btn btn-primary" onClick={sumCantidad}>+</button>
+                        </div>
+                        <button className="btn btn-primary m-2" onClick={agregar}>Agregar al Carrito</button>
+                    </div>
                 }
             </div>
-            <button className="btn btn-primary m-2" onClick={agregar}>Agregar al Carrito</button>
         </>
     )
 }
