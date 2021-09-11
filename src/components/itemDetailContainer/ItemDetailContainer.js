@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import { buscarDatos } from '../../helpers/buscarDatos';
 import { useParams } from 'react-router-dom';
-import ItemDetail from '../itemDetail/ItemDetail'
+import ItemDetail from '../itemDetail/ItemDetail';
+import {fire} from '../../firebase'
 
 export default function ItemDetailContainer(){
 
@@ -9,17 +9,17 @@ export default function ItemDetailContainer(){
 
     const [producto, setProducto] = useState(null)
     const [loading, setLoading] = useState(true)
-    
+
+    useEffect(() => {
+        setLoading(false)
+    }, [producto]);
 
     useEffect(() => {
         setLoading(true)
-        buscarDatos()
-            .then(res => {
-                setProducto(res.find(item => item.id === parseInt(productoId)))
-            })
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false))
+        fire.getCollection(setProducto, "productos", {doc: productoId})
     }, [productoId]);
+
+    
 
     return (
         <div className="ItemDetailContainer">

@@ -5,11 +5,10 @@ import ItemDetailContainer from './components/itemDetailContainer/ItemDetailCont
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import { CartContext } from './components/context/CartContext'
-import {useState} from 'react'
+import Cart from './components/cart/Cart';
+
 
 function App() {
-
-
 
   return (
     <div className="App">
@@ -28,7 +27,7 @@ function App() {
               <ItemDetailContainer/>
             </Route>
             <Route path="/carrito">
-              <h2>Proximamente</h2>
+              <Cart value="Hola"/>
             </Route>
             <Route path="*">
               <Redirect to="/"/>

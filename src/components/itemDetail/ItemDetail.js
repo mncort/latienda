@@ -5,7 +5,7 @@ import Counter from '../counter/Counter';
 
 export default function ItemDetail({item}){
 
-    const {id, img, title, descripcion, precio, stock} = item
+    const {id, img, title, descripcion, precio, stock} = item[0]
 
     const {cart} = useCarritoContext()
 

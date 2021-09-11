@@ -6,8 +6,6 @@ export const useCarritoContext = () => useContext(CarritoContext)
 
 export const CartContext = ({children}) => {
 
-    console.log(children)
-
   const [carrito, setCarrito] = useState([])
 
   const cart = {}
@@ -20,12 +18,20 @@ export const CartContext = ({children}) => {
         }
     ])
   }
+
+  cart.removeItem = (id) => {
+    setCarrito(carrito.filter( item => item.id !== id))
+  }
   cart.clearCarrito = () =>{
     setCarrito([])
   }
   cart.isInCarrito = (id) => { 
     return carrito.find(item => item.id === id) ? true : false
   }
+
+  cart.isEmpty = () => carrito.length === 0
+
+  cart.count = () => carrito.reduce( (a,b) => a+parseInt(b.cantidad), 0) || 0
 
   return (
     <CarritoContext.Provider value={{carrito, cart}} >

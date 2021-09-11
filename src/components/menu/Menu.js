@@ -1,6 +1,6 @@
 import React from 'react';
 import './Menu.css';
-import Cart from '../cart/cart';
+import CartWidget from '../cartWidget/CartWidget';
 import { Link } from 'react-router-dom';
 
 export default function Menu(){
@@ -15,7 +15,7 @@ export default function Menu(){
             <Link className="menu-item" to={'/categoria/remeras'}>Remeras</Link>
             <Link className="menu-item" to={'/categoria/pantalones'}>Pantalones</Link>
             <Link className="menu-item" to={'/categoria/zapatillas'}>Zapatillas</Link>
-            <Link className="menu-item" to={'/carrito'}><Cart/></Link>
+            <Link className="menu-item" to={'/carrito'}><CartWidget/></Link>
         </div>
     </div>
 
