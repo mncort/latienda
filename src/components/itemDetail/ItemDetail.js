@@ -1,6 +1,5 @@
-import {React, useState} from 'react';
-import { useContext } from 'react';
-import { CartContext } from '../context/CartContext';
+import React, {useState, useContext} from 'react';
+import { CartContext, useCarritoContext } from '../context/CartContext';
 import Counter from '../counter/Counter';
 
 
@@ -8,12 +7,12 @@ export default function ItemDetail({item}){
 
     const {id, img, title, descripcion, precio, stock} = item
 
-    const {addItem, isInCarrito} = useContext(CartContext)
+    const {cart} = useCarritoContext()
 
     const [cantidad, setCantidad] = useState(1)
 
     const agregar = () => {
-        addItem({id, img, title, precio}, cantidad)
+        cart.addItem({id, img, title, precio}, cantidad)
     }
 
     return(

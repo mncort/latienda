@@ -1,12 +1,12 @@
 import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { CartContext } from '../context/CartContext';
+import { CartContext, useCarritoContext } from '../context/CartContext';
 
 
 export default function Counter({id, stock, cantidad, setCantidad, agregar}){
 
-    const {isInCarrito} = useContext(CartContext)
+    const {cart} = useCarritoContext()
 
     const restCantidad = () => {
         cantidad > 1 && setCantidad(cantidad - 1)        
@@ -18,7 +18,7 @@ export default function Counter({id, stock, cantidad, setCantidad, agregar}){
     return (
         <>
             <div className="w-50 m-auto">
-                {isInCarrito(id) ?
+                {cart.isInCarrito(id) ?
                     <div>
                         <Link to={'/carrito'} className="btn btn-success">Terminar Compra</Link>
                     </div>

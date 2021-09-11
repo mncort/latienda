@@ -9,28 +9,12 @@ import {useState} from 'react'
 
 function App() {
 
-  const [carrito, setCarrito] = useState([])
-
-  const addItem = (item, cant) => {
-    setCarrito([
-        ...carrito,
-        {
-            ...item, cantidad: cant
-        }
-    ])
-  }
-  const clearCarrito = () =>{
-    setCarrito([])
-  }
-  const isInCarrito = (id) => { 
-    return carrito.find(item => item.id === id) ? true : false
-  }
 
 
   return (
     <div className="App">
 
-      <CartContext.Provider value={{carrito, addItem, isInCarrito}}>
+      <CartContext>
         <BrowserRouter>
           <Menu/>
           <Switch>
@@ -52,7 +36,7 @@ function App() {
             </Route>
           </Switch>
         </BrowserRouter>
-      </CartContext.Provider>
+      </CartContext>
     </div>
   );
 }
