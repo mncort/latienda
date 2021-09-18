@@ -5,6 +5,7 @@ import ItemDetailContainer from './components/itemDetailContainer/ItemDetailCont
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import { CartContext } from './components/context/CartContext'
+import { UserContext } from './components/context/UserContext'
 import Cart from './components/cart/Cart';
 
 
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
 
+      <UserContext>
       <CartContext>
         <BrowserRouter>
           <Menu/>
@@ -36,6 +38,7 @@ function App() {
           </Switch>
         </BrowserRouter>
       </CartContext>
+      </UserContext>
     </div>
   );
 }

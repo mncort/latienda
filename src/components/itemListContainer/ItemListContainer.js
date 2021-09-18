@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from '../itemList/ItemList';
-import { buscarDatos } from '../../helpers/buscarDatos';
 import { useParams } from 'react-router-dom';
 import { fire } from '../../firebase';
 

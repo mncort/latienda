@@ -21,6 +21,9 @@
     text-decoration: none;
     color:azure;
 }
+.menu-item::first-letter {
+    text-transform: uppercase;
+}
 .menu-item:hover{
     color: orange;
     cursor: pointer;

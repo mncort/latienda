@@ -5,7 +5,7 @@ import { useCarritoContext } from '../context/CartContext';
 
 export default function CartWidget(){
 
-    const {cart, carrito} = useCarritoContext()
+    const {cart} = useCarritoContext()
 
     return (
 

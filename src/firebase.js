@@ -28,13 +28,20 @@ fire.setCollection = (collectionName, array, id,callback) => {
   
         .then ( docRef => {
           console.log   ("Document written with ID: ", docRef.id) 
-          //callback(docRef.id)
+          callback(docRef.id)
         })
         .catch( error  => {
           console.error ("Error adding document: "   , error    ) 
         })
       }
     )
+  }
+
+  fire.updateCollectionDoc = (collectionName, doc, values) => {
+    db.collection(collectionName)
+      .doc(doc)
+      .update(values)
+      .catch( error  => {console.error ("Error updating document: "   , error    ) })
   }
 
   fire.getCollection = (callback,collection,opt={}) => {
