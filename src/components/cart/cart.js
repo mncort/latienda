@@ -14,20 +14,22 @@ export default function Cart(value){
 
     return (   
 
-        <div className="container">
+        <div className="container py-4">
             <div className="row justify-content-center">
-            <>{
-                !cart.isEmpty() ? 
-                    <>
-                        {carrito.map( item => <CartItem key={item.id} item={item}/>)}
-                        <button className="btn btn-primary" onClick={ () => setCheckOut(!checkOut)}>Finalizar Compra</button>
-                    </>
-                :
-                    <div>
-                        <p>El carrito esta vacio</p>
-                        <Link to="/" className="btn btn-primary">Seguir Comprando</Link>
-                    </div>
-            }</>
+                <div className="col-6">
+                {
+                    !cart.isEmpty() ? 
+                        <>
+                            {carrito.map( item => <CartItem key={item.id} item={item}/>)}
+                            <button className="btn btn-primary w-100" onClick={ () => setCheckOut(!checkOut)}>Finalizar Compra</button>
+                        </>
+                    :
+                        <div>
+                            <p>El carrito esta vacio</p>
+                            <Link to="/" className="btn btn-primary">Seguir Comprando</Link>
+                        </div>
+                }
+                </div>
             </div>
             <CheckOut checkOut={checkOut} setCheckOut={setCheckOut}/>
         </div> 

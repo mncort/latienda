@@ -21,8 +21,8 @@ export default function ItemListContainer(){
     }, [cat]);
 
     return(
-        <div className="ItemListContainer">
-            <div>{loading ? <h1>Cargando...</h1> : <ItemList listado={productos}/>}</div>
+        <div className="ItemListContainer w-100">
+            <>{loading ? <h1>Cargando...</h1> : <ItemList listado={productos}/>}</>
         </div>
     )
 }

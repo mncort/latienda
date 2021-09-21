@@ -7,7 +7,7 @@ export default function Cart({item}){
 
     return (
 
-            <div key={item.id} className="card col-6 mb-3" style={{maxwidth: 250}}> 
+            <div key={item.id} className="card mb-3" style={{maxwidth: 250}}> 
                 <div className="row g-0">
                     <div className="col-md-4">
                         <img src={item.img} className="img-fluid rounded-start" alt="..."/>

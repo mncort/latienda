@@ -27,12 +27,15 @@ export const CartContext = ({children}) => {
   cart.numeroOrden = numeroOrden
 
   cart.addItem = (item, cant) => {
-    setCarrito([
-        ...carrito,
-        {
-            ...item, cantidad: cant
-        }
-    ])
+    carrito.push({
+      ...item, 
+      cantidad: cant
+    })
+    carrito.total = cart.total()
+    setCarrito([...carrito])
+  }
+  cart.total = () => {
+    return carrito.reduce((a,b) => a + (parseInt(b.cantidad) * parseInt(b.precio)),0)
   }
 
   cart.removeItem = (id) => {
